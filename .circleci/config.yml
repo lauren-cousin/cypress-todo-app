@@ -23,3 +23,9 @@ jobs:
         background: true
       - run: $(npm bin)/cypress verify
       - run: $(npm bin)/cypress run
+workflows:
+  version: 2
+  one_and_two:
+    jobs:
+      - one
+      - two
