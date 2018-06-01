@@ -23,8 +23,8 @@ jobs:
       - run:
           command: npm install --save-dev cypress
           background: true
-      - run: $(npm bin)/cypress verify
-      - run: $(npm bin)/cypress run
+      - run: ./node_modules/.bin/cypress verify
+      - run: ./node_modules/.bin/cypress run
 workflows:
   version: 2
   one_and_two:
