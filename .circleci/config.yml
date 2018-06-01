@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       ## background your server
-      - run: npm start & wait-on http://localhost:3030
+      - run: npm start wait-on http://localhost:3030
       - run: npm install --save-dev cypress
       - run: $(npm bin)/cypress verify
       - run: $(npm bin)/cypress run
