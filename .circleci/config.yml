@@ -4,19 +4,22 @@
 #
 version: 2
 jobs:
-  build:
+  one:
     docker:
       - image: circleci/node:8.0
     steps:
-    - checkout
-    ## background your server
-    - run:
+      - checkout
+      ## background your server
+      - run:
         command: npm run dev
         background: true
+  two:
     docker:
       - image: cypress/base:10
-    - run:
+    steps:
+      - checkout
+      - run:
         command: npm install --save-dev cypress
         background: true
-    - run: $(npm bin)/cypress verify
-    - run: $(npm bin)/cypress run
+      - run: $(npm bin)/cypress verify
+      - run: $(npm bin)/cypress run
