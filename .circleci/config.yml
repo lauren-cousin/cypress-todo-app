@@ -11,18 +11,18 @@ jobs:
       - checkout
       ## background your server
       - run:
-        command: |
-          npm run dev
-          npm install
-        background: true
+          command: |
+            npm run dev
+            npm install
+          background: true
   two:
     docker:
       - image: cypress/base:10
     steps:
       - checkout
       - run:
-        command: npm install --save-dev cypress
-        background: true
+          command: npm install --save-dev cypress
+          background: true
       - run: $(npm bin)/cypress verify
       - run: $(npm bin)/cypress run
 workflows:
