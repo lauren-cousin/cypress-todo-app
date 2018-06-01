@@ -11,10 +11,9 @@ jobs:
     - checkout
     ## background your server
     - run:
-        command: npm install
-        background: true
-    - run:
-        commend: npm run dev
+        command: |
+          npm install
+          npm run dev
         background: true
     - run: npm install --save-dev cypress
     - run: $(npm bin)/cypress verify
