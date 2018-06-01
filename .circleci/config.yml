@@ -13,6 +13,7 @@ jobs:
     ## background your server
     - run:
         command: |
+          npm install
           npm run dev
         background: true
     - run: npm install --save-dev cypress
