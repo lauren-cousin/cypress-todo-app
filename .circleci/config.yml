@@ -8,9 +8,14 @@ jobs:
     docker:
       - image: cypress/base:10
     steps:
-      - checkout
-      ## background your server
-      - run: npm run dev
-      - run: npm install --save-dev cypress
-      - run: $(npm bin)/cypress verify
-      - run: $(npm bin)/cypress run
+    - checkout
+    ## background your server
+    - run:
+        command: npm install
+        background: true
+    - run:
+        commend: npm run dev
+        background: true
+    - run: npm install --save-dev cypress
+    - run: $(npm bin)/cypress verify
+    - run: $(npm bin)/cypress run
