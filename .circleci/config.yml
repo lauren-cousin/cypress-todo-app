@@ -11,7 +11,9 @@ jobs:
       - checkout
       ## background your server
       - run:
-        command: npm run dev
+        command: |
+        npm run dev
+        npm install
         background: true
   two:
     docker:
