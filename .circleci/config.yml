@@ -22,11 +22,11 @@ jobs:
     steps:
       - checkout
       - run:
-          working_directory: cypress-tutorial-build-todo-starter
+          working_directory: ~/cypress-tutorial-build-todo-starter
           command: npm install --save-dev cypress
           background: true
       - run: 
-          working_directory: cypress-tutorial-build-todo-starter
+          working_directory: ~/cypress-tutorial-build-todo-starter
           command: ./node_modules/.bin/cypress run
 workflows:
   version: 2
