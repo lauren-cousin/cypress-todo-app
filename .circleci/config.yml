@@ -7,12 +7,12 @@ jobs:
   build:
     docker:
       - image: cypress/base:10
+      - image: node:8.0
     steps:
     - checkout
     ## background your server
     - run:
         command: |
-          npm install
           npm run dev
         background: true
     - run: npm install --save-dev cypress
