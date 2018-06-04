@@ -1,13 +1,15 @@
 {
   "name": "cypress-tutorial-build-todo-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repository is the starting point for an official Cypress tutorial. We encourage you to clone this repo and follow along.",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
     "serve": "json-server db.json",
     "dev": "concurrently \"npm run watch\" \"npm run serve\"",
+    "pretest": "npm run dev &",
+    "posttest": "kill $(lsof -t -i:3030)",
     "cypress": "cypress open",
     "cypress:all": "cypress run"
   },
@@ -33,5 +35,13 @@
     "html-webpack-plugin": "^2.30.1",
     "style-loader": "^0.19.0",
     "webpack": "^3.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauren-cousin/cypress-todo-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lauren-cousin/cypress-todo-app/issues"
+  },
+  "homepage": "https://github.com/lauren-cousin/cypress-todo-app#readme"
 }
