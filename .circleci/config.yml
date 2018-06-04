@@ -14,6 +14,7 @@ jobs:
       - run:
           working_directory: ~/project
           command: |
+            npm install
             npm run pretest
       - run: 
           working_directory: ~/project
