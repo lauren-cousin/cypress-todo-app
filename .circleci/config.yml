@@ -13,6 +13,7 @@ jobs:
       ## background your server
       - run:
           command: |
+            npm install
             npm run pretest
       - run: 
           working_directory: ~/cypress-tutorial-build-todo-starter
