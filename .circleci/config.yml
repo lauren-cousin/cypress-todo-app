@@ -12,8 +12,8 @@ jobs:
       - checkout
       ## background your server
       - run:
+          working_directory: ~/project
           command: |
-            working_directory: ~/project
             npm run pretest
       - run: 
           working_directory: ~/project
