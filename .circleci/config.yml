@@ -16,7 +16,4 @@ jobs:
           command: |
             npm install
             npm run pretest & ./node_modules/.bin/cypress run
-      # wait for localhost:3030 to come up
-      # - run: sleep 20
-      # - run: 
-      #     command: ./node_modules/.bin/cypress run
+            
