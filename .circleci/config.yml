@@ -13,7 +13,7 @@ jobs:
       - run:
           command: |
             npm init -y
-            npm install --save-dev cypress
+            npm install
             npm run pretest
   test:
     docker:
