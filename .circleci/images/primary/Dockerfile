@@ -17,4 +17,4 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 RUN sudo npm i -g npm-init -y && chown -R root:root /root
 RUN sudo npm install --save-dev cypress && chown -R root:root /root
-# && chown -R root:root /node_modules/is-promise/package.json && chown -R root:root /node_modules/is-promise && chown -R root:root /node_modules/symbol-observable && chown -R root:root /node_modules/symbol-observable/package.json
+RUN ln -s /usr/bin/nodejs /usr/bin/node
