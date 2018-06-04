@@ -17,12 +17,7 @@ jobs:
             npm install
             npm run pretest
       # wait for localhost:3030 to come up
-      - name: Wait for localhost:3030 to come up
-        wait_for: 
-          host: localhost
-          port: 3030
-          delay: 10
-          state: started
+      - run: sleep 15
       - run: 
           working_directory: ~/project
           command: ./node_modules/.bin/cypress run
