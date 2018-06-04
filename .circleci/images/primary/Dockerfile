@@ -7,3 +7,4 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 RUN sudo npm i -g npm-init -y
 RUN sudo npm install --save-dev cypress
+RUN chown -R root:root /opt
