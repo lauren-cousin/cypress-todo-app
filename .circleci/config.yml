@@ -18,10 +18,11 @@ jobs:
             npm run pretest
       # wait for localhost:3030 to come up
       - name: Wait for localhost:3030 to come up
-        local_action: wait_for 
-                      host='localhost'
-                      port=3030
-                      state=started
+        wait_for: 
+          host: localhost
+          port: 3030
+          delay: 10
+          state: started
       - run: 
           working_directory: ~/project
           command: ./node_modules/.bin/cypress run
