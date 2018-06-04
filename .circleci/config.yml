@@ -6,31 +6,14 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.0
+      # using custom image; see .circleci/images/primary/Dockerfile
+      - image: laurenc/node-cypress
     steps:
       - checkout
       ## background your server
       - run:
           command: |
-            npm init -y
-            npm install
             npm run pretest
-  test:
-    docker:
-      - image: cypress/base:10
-    steps:
-      - checkout
-      # - run:
-      #     working_directory: ~/cypress-tutorial-build-todo-starter
-          # command: npm install --save-dev cypress
       - run: 
           working_directory: ~/cypress-tutorial-build-todo-starter
           command: ./node_modules/.bin/cypress run
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
