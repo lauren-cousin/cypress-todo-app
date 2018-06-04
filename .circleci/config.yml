@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # using custom image; see .circleci/images/primary/Dockerfile
-      - image: laurnc/node-cypress:0.0.1
+      - image: laurnc/node-cypress:0.0.2
     steps:
       - checkout
       ## background your server

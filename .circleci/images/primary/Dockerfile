@@ -5,5 +5,5 @@ RUN mkdir /home/node/.npm-global
 ENV PATH=/home/node/.npm-global/bin:$PATH
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
-RUN npm i -g npm-init -y
-RUN npm install --save-dev cypress
+RUN sudo npm i -g npm-init -y
+RUN sudo npm install --save-dev cypress
