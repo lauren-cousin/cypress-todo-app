@@ -12,7 +12,6 @@ jobs:
       - checkout
       ## background your server
       - run:
-          working_directory: ~/cypress-tutorial-build-todo-starter
           command: |
             npm run pretest
       - run: 
