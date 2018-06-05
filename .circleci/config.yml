@@ -15,7 +15,7 @@ jobs:
           working_directory: ~/project
           command: |
             npm install
-            npm run pretest & ./node_modules/.bin/cypress run --reporter junit --reporter-options "mochaFile=results/my-test-output.xml"
+            npm run pretest & ./node_modules/.bin/cypress run --record --key de1af7fb-1848-4745-8cb0-ce13f2ae9b22 --reporter junit --reporter-options "mochaFile=results/my-test-output.xml"
       - store_test_results:
           path: results
 
