@@ -33,7 +33,7 @@ describe('Input form', () => {
         .type('{enter}')
         .should('have.value', '')
       cy.get('.todo-list li')
-        .should('have.length', 1)
+        .should('have.length', 2)
         .and('contain', itemText)
     })
 
@@ -41,7 +41,7 @@ describe('Input form', () => {
       cy.route({
         url: '/api/todos',
         method: 'POST',
-        status: 500,
+        status: 400,
         response: {}
       })
 
